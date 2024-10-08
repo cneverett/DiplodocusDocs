@@ -1,7 +1,5 @@
 push!(LOAD_PATH,"../src/")
-using Documenter
-
-makedocs(sitename="Diplodocus")
+using Documenter, DiplodocusDocs
 
 makedocs(
     sitename = "DiplodocusDocs",
