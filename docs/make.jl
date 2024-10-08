@@ -6,7 +6,7 @@ makedocs(sitename="Diplodocus")
 makedocs(
     sitename = "DiplodocusDocs",
     authors = "Christopher Everett",
-    modules  = [],
+    modules  = Module[],
     pages=["Home" => "index.md"]
 )
 
