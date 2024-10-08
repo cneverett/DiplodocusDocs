@@ -10,7 +10,7 @@ makedocs(
 
 
 deploydocs(
-    repo="github.com/cneverett/DiplodocusDocs.git",    
+    repo="github.com/cneverett/DiplodocusDocs",    
     target = "build",
     branch = "gh-pages",
     devbranch = "main",
