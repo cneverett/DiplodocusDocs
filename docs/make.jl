@@ -1,3 +1,5 @@
+# taken from juliamanifolds repo
+
 if "--help" ∈ ARGS
     println(
         """
@@ -42,10 +44,7 @@ makedocs(
     sitename = "DiplodocusDocs",
     authors = "Christopher Everett",
     modules  = Module[],
-    clean = true,
-    doctest = false,
-    pages=["Home" => "index.md"],
-    checkdocs = :export
+    pages=["Home" => "index.md"]
 )
 
 # build MultiDocs - one for each package
@@ -85,7 +84,7 @@ MultiDocumenter.make(
     #versions = ["stable" => "v^", "v#.#"]
 ) =#
 
-if "deploy" in ARGS
+if "--deploy" in ARGS
     @warn "Deploying to GitHub" ARGS
     gitroot = normpath(joinpath(@__DIR__, ".."))
     run(`git pull`)
