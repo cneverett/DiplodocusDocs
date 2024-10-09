@@ -58,7 +58,7 @@ docs = [
     ),
     MultiDocumenter.MultiDocRef(
         upstream = joinpath(clonedir, "BoltzmannCollisionIntegral.jl"),
-        path = "boltzmanncollisionintegrale",
+        path = "boltzmanncollisionintegral",
         name = "BoltzmannCollisionIntegral.jl",
         giturl = "https://github.com/cneverett/BoltzmannCollisionIntegral.jl.git",
     )
