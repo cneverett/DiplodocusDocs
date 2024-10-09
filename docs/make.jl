@@ -25,7 +25,7 @@ if Base.active_project() != joinpath(@__DIR__, "Project.toml")
 end
 
 clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
-outpath =  ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "out")
+outpath = mktempdir()
 
 @info """
 Cloning packages into: $(clonedir)
