@@ -10,7 +10,6 @@ Render the `JuliaManifolds` GitHub Organisation Multidocumenter with optional ar
 Arguments
 * `--deploy`       - deploy docs to GitHub pages (e.g. on CI)
 * `--help`         - print this help and exit without rendering the documentation
-* `--serve`        - use `LiveServer.jl` to serve the current docs, also launches the browser
 * `--temp`         – clone the other repositories into a temp folder – otherwise use clones/
 """,
     )
@@ -34,7 +33,6 @@ Building aggregate site into: $(outpath)
 """
 
 using MultiDocumenter
-using LiveServer
 using Documenter
 #using DiplodocusDocs
 
