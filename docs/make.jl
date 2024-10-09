@@ -1,4 +1,27 @@
-push!(LOAD_PATH,"../src/")
+if "--help" ∈ ARGS
+    println(
+        """
+docs/make.jl
+
+Render the `JuliaManifolds` GitHub Organisation Multidocumenter with optional arguments
+
+Arguments
+* `--deploy`       - deploy docs to GitHub pages (e.g. on CI)
+* `--help`         - print this help and exit without rendering the documentation
+* `--serve`        - use `LiveServer.jl` to serve the current docs, also launches the browser
+* `--temp`         – clone the other repositories into a temp folder – otherwise use clones/
+""",
+    )
+    exit(0)
+end
+
+# ## if docs is not the current active environment, switch to it 
+if Base.active_project() != joinpath(@__DIR__, "Project.toml")
+    using Pkg
+    Pkg.activate(@__DIR__)
+    Pkg.resolve()
+    Pkg.instantiate()
+end
 
 clonedir = ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "clones")
 outpath =  ("--temp" in ARGS) ? mktempdir() : joinpath(@__DIR__, "out")
@@ -8,9 +31,10 @@ Cloning packages into: $(clonedir)
 Building aggregate site into: $(outpath)
 """
 
-using Documenter
-using DiplodocusDocs
 using MultiDocumenter
+using LiveServer
+using Documenter
+#using DiplodocusDocs
 
 
 # build local docs but don't deploy
